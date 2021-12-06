@@ -27,7 +27,7 @@ RUN cd /usr/local/bin && \
 
 # Rename helm-wrapper.sh to helm and ensure the wrapper is also used when helm2 is being used
 RUN cd /usr/local/bin && \
-    ls -l && mv helm-wrapper.sh helm && \
+    mv helm-wrapper.sh helm && \
     ln helm helm2 && \
     chmod +x helm helm2
 
