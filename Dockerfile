@@ -12,7 +12,7 @@ COPY helm-wrapper.sh /usr/local/bin/
 
 # Update system
 RUN apt-get update && \
-    apt-get install -y curl gpg && \
+    apt-get install -y curl gpg age && \
     apt-get clean
 
 # Install SOPS
