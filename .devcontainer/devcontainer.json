@@ -20,20 +20,13 @@
 		"editor.formatOnSave": true,
 		"editor.renderFinalNewline": true,
 		"editor.codeLens": true,
-        "editor.guides.bracketPairs": true,
-        "editor.bracketPairColorization.enabled": true,
-		"terraform.languageServer": {
-			"external": true,
-			"pathToBinary": "/usr/local/bin/terraform-ls",
-			"args": [
-				"serve"
-			],
-			"maxNumberOfProblems": 100,
-			"trace.server": "off"
-		},
-		"[terraform]": {
-			"editor.formatOnSave": true
-		}
+		"editor.guides.bracketPairs": true,
+		"editor.bracketPairColorization.enabled": true,
+		"editor.guides.highlightActiveIndentation": true,
+		"editor.guides.bracketPairsHorizontal": "active",
+		"indentRainbow.includedLanguages": [
+			"yaml"
+		],
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
@@ -41,7 +34,9 @@
 		"davidanson.vscode-markdownlint",
 		"shardulm94.trailing-spaces",
 		"github.vscode-pull-request-github",
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+		"oderwat.indent-rainbow", // I hate to install this plugin only to show colors in yaml documents... I would prefer to use `"editor.bracketPairColorization.enabled": true,` like everywhere else...
+		"aaron-bond.better-comments",
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [9000],
