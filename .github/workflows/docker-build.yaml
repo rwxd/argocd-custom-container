@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: av0de/argocd-custom-container
+          ghcr.io/${{ github.repository }}
 
       - name: Build and Push
         uses: docker/build-push-action@v2
