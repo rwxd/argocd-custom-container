@@ -1,11 +1,6 @@
 #! /bin/sh
 
-GPG_KEY='/home/argocd/gpg/gpg.asc'
-
-if [ -f ${GPG_KEY} ]
-then
-    gpg --quiet --import ${GPG_KEY}
-fi
+export SOPS_AGE_KEY_FILE=/helm-secrets/age_private_key
 
 # helm secrets only supports a few helm commands
 if [ $1 = "template" ] || [ $1 = "install" ] || [ $1 = "upgrade" ] || [ $1 = "lint" ] || [ $1 = "diff" ]
