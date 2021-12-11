@@ -26,8 +26,9 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&    \
     chmod +x /usr/local/bin/sops
 
 # Install ksops
-RUN mkdir -p $PLUGIN_PATH && \
-    curl https://github.com/viaduct-ai/kustomize-sops/releases/latest/download/ksops_latest_Linux_x86_64.tar.gz  | tar -xz -C $PLUGIN_PATH
+RUN mkdir -p $PLUGIN_PATH
+RUN curl -o ./ksops.tar.gz -L https://github.com/viaduct-ai/kustomize-sops/releases/latest/download/ksops_latest_Linux_x86_64.tar.gz && \
+    tar -xf ./ksops.tar.gz -C $PLUGIN_PATH
 
 # Rename helm binaries (helm and helm2) with to helm.bin and helm2.bin
 RUN cd /usr/local/bin && \
