@@ -33,14 +33,12 @@ RUN curl -o ./ksops.tar.gz -L https://github.com/viaduct-ai/kustomize-sops/relea
 
 # Rename helm binaries (helm and helm2) with to helm.bin and helm2.bin
 RUN cd /usr/local/bin && \
-    mv helm helm.bin && \
-    mv helm2 helm2.bin
+    mv helm helm.bin
 
 # Rename helm-wrapper.sh to helm and ensure the wrapper is also used when helm2 is being used
 RUN cd /usr/local/bin && \
     mv helm-wrapper.sh helm && \
-    ln helm helm2 && \
-    chmod +x helm helm2
+    chmod +x helm
 
 RUN chown -R argocd ${HOME}
 
