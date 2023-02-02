@@ -1,4 +1,4 @@
-FROM argoproj/argocd:v2.5.7
+FROM argoproj/argocd:v2.5.9
 
 ARG SOPS_VERSION="v3.7.3"
 ARG HELM_SECRETS_VERSION="4.2.2"
