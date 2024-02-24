@@ -3,7 +3,8 @@ name: Docker Build
 on:
   push:
     branches:
-      - main
+      # - main
+      - changes
     tags:
       - "v*"
   pull_request:
